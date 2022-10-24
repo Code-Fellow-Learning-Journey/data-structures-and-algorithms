@@ -12,7 +12,8 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
-  // Solution code here...
+  let fullName = people.map((names) => names.firstName + ' ' + names.lastName);
+  return fullName;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  // Solution code here...
+  return arr.reduce((accum, value) => accum + value, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,7 +40,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
+  return arr.reduce((accum, element) => accum + element.purchasePrice, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +52,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  return arr.reduce((accum) => accum + 1, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +112,11 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.reduce((accum, element) => {
+    return newArr.push(element.name);
+  }, 0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,9 +128,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  return str.split('').reduce((accum, element) => element + accum);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
