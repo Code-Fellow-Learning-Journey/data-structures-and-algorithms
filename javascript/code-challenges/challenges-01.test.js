@@ -198,7 +198,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-describe('Testing challenge 6', () => {
+xdescribe('Testing challenge 6', () => {
   const inventory = [
     { name: 'apples', available: true },
     { name: 'pears', available: true },
