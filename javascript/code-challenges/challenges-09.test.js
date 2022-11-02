@@ -133,19 +133,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  let children = 0;
-  [name, spouse, children, house]
-  [JSON, null, [], houseNames]
-  arr.forEach(person =>{
-if(person.name === character){
-  Object.keys(person).forEach((key, idx)=>{
-    if(key==='children'){
-      numOfChildren = Object.values(person)[idx].length;
-    }
-  });
-  }
-});
-//};
+ // let children = 0;
+//   [name, spouse, children, house]
+//   [JSON, null, [], houseNames]
+//   arr.forEach(person =>{
+// if(person.name === character){
+//   Object.keys(person).forEach((key, idx)=>{
+//     if(key==='children'){
+//       numOfChildren = Object.values(person)[idx].length;
+//     }
+//   });
+//   }
+// });
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
