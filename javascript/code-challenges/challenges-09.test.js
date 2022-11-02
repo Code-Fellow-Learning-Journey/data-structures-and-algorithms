@@ -36,7 +36,7 @@ const courseInfo = {
 
 const getCourseKeys = (obj) => {
 
-  let props = Object.keys(courseInfo);
+  let props = Object.keys(obj);
   return props;
 
 };
@@ -137,11 +137,10 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-
-  for (let element of arr) {
-    houses.push(element.house);
-  }
-
+  arr.forEach(theHouse => {
+    houses.push(theHouse.house);
+  });
+  return houses;
 };
 
 /*------------------------------------------------------------------------------------------------
