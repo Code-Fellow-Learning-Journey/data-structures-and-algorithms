@@ -9,7 +9,14 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
+
+  let maxmin = arr.reduce(
+    (accum, element) => {
+      return (accum > element ? accum : element);
+    }
+  );
+  return maxmin;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,13 +26,19 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
+
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+
+  let props = Object.keys(courseInfo);
+  return props;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +50,10 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+
+  let val = Object.values(obj);
+  return val.includes(value);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +76,12 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+
+  for (let property in obj) {
+    let nums = (`${property}: ${obj[property]}`);
+    return nums;
+  }
+
 };
 
 
@@ -116,8 +137,11 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
-  return houses;
+
+  for (let element of arr) {
+    houses.push(element.house);
+  }
+
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -133,18 +157,20 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
- // let children = 0;
-//   [name, spouse, children, house]
-//   [JSON, null, [], houseNames]
-//   arr.forEach(person =>{
-// if(person.name === character){
-//   Object.keys(person).forEach((key, idx)=>{
-//     if(key==='children'){
-//       numOfChildren = Object.values(person)[idx].length;
-//     }
-//   });
-//   }
-// });
+
+  let children = 0;
+  arr.forEach(person => {
+    if (person.name === character) {
+      Object.keys(person).forEach((key, idx) => {
+        if (key === 'children') {
+          children = Object.values(person)[idx].length;
+        }
+      });
+    }
+  });
+
+  return children ? true : false;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
