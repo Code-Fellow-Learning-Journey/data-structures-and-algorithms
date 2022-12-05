@@ -1,23 +1,23 @@
 'use strict';
 
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
 
-class LinkedList{
-  constructor(){
+class LinkedList {
+  constructor() {
     this.head = null;
   }
 
   // add a node to the end of the linked list
-  add(value){
+  append(value) {
     let node = new Node(value);
 
     // if no head exists, we assign the new node as head and we are done
-    if(!this.head){
+    if (!this.head) {
       this.head = node;
       return;
     }
@@ -25,27 +25,53 @@ class LinkedList{
     // traverse the linked list and add the new node to the end
     let current = this.head;
 
-    while(current.next){
+    while (current.next) {
       current = current.next;
     }
     current.next = node
   }
 
   // traverse a linked list and log the value of each node
-  traverse(){
+  traverse() {
     let current = this.head;
 
-    while(current){
+    while (current) {
       // do the thing
       console.log(current.value);
       current = current.next;
     }
   }
 
-  insert(value){
+  insert(value) {
     let node = new Node(value);
     node.next = this.head;
     this.head = node;
+  }
+
+  insertBefore(value, newValue) {
+    let current = this.head;
+    while (current.next !== null) {
+      if (current.next.value === value) {
+        let node = new Node(newValue);
+        node.next = current.next;
+        current = node;
+        return;
+      }
+      return current;
+    }
+  }
+
+  insertAfter(value, newValue) {
+    let current = this.head;
+    while (current.next !== null) {
+      if (current.next.value === value) {
+        let node = new Node(newValue);
+        node = current.next;
+        current.next = node;
+        return;
+      }
+      return current;
+    }
   }
 }
 
