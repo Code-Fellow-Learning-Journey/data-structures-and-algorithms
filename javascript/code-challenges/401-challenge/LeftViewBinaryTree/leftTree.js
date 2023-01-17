@@ -19,6 +19,7 @@ function leftViewWhen(node, level) {
   }
   leftViewWhen(node.left, level + 1);
   leftViewWhen(node.right, level + 1);
+}
 
 
 root = Node(10);
@@ -31,4 +32,4 @@ root.right.left = new Node(12);
 root.right.right.left = new Node(14);
 
 
-console.log();
+return leftViewWhen(root);
