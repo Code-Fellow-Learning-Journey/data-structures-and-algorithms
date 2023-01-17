@@ -7,4 +7,5 @@ Code challange doen with Julian Barker
 Write a function that LEFT JOINs two hashmaps into a single data structure.
 
 ## Solution
-![UML](/401-challenge/screenshots/codechallange33.png)
+
+![UML](../../screenshots/codechallange33.png)

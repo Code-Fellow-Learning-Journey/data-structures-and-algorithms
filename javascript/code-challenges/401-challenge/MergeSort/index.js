@@ -48,3 +48,6 @@ function merge(left, right, arr) {
   }
   return mergeSort;
 }
+
+export default mergeSort;
+
