@@ -1,4 +1,4 @@
-import './index';
+import mergeSort from './index';
 
 describe('mergeSort', () => {
   it('should sort an array in ascending order', () => {

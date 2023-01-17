@@ -43,4 +43,4 @@ my understanding
 
 I feel that i had the right train of thought for translating the pseudocode and putting it into word or a rough algorithm that could be a possibility
 
-
+![uml](../../screenshots/chall26.png)
