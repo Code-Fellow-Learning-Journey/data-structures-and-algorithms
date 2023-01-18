@@ -9,10 +9,8 @@ i took a rucurrsion route. trying to learn the basics of recursion and even thou
 
 ## Solution
 
-
-
-`var root;
-var maxLevel = 0;
+`let root;
+let maxLevel = 0;
 
 function leftViewWhen(node, level) {
   if (node === null) {
