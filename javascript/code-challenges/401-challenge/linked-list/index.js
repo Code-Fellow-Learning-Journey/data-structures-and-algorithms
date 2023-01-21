@@ -49,12 +49,16 @@ class LinkedList {
   }
 
   insertBefore(value, newValue) {
+    if (!this.head) {
+      throw new Error('linked list is empty');
+    }
+
     let current = this.head;
     while (current.next !== null) {
       if (current.next.value === value) {
         let node = new Node(newValue);
         node.next = current.next;
-        current = node;
+        current.next = node;
         return;
       }
       return current;
