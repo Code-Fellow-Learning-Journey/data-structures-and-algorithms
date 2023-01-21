@@ -49,28 +49,41 @@ class LinkedList {
   }
 
   insertBefore(value, newValue) {
-    let current = this.head;
-    while (current.next !== null) {
-      if (current.next.value === value) {
-        let node = new Node(newValue);
-        node.next = current.next;
-        current = node;
-        return;
-      }
-      return current;
+    if (!this.head) {
+      throw new Error('Link List Empty');
     }
-  }
+    if (this.head.value === value) {
+      this.insert(newValue);
+      return;
+    }
 
-  insertAfter(value, newValue) {
     let current = this.head;
-    while (current.next !== null) {
+
+    while (current) {
       if (current.next.value === value) {
         let node = new Node(newValue);
         node = current.next;
         current.next = node;
         return;
       }
-      return current;
+      current = current.next;
+    }
+  }
+
+  insertAfter(value, newValue) {
+    if (!this.head) {
+      throw new Error('Link List Empty');
+    }
+
+    let current = this.head;
+
+    while (current) {
+      if (current.value === value) {
+        let node = new Node(newValue);
+        node = current.next;
+        current.next = node;
+      }
+      current = current.next;
     }
   }
 }
