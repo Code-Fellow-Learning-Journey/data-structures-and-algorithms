@@ -28,19 +28,10 @@ class LinkedList {
     while (current.next) {
       current = current.next;
     }
-    current.next = node
+    current.next = node;
   }
 
-  // traverse a linked list and log the value of each node
-  traverse() {
-    let current = this.head;
 
-    while (current) {
-      // do the thing
-      console.log(current.value);
-      current = current.next;
-    }
-  }
 
   insert(value) {
     let node = new Node(value);
@@ -86,17 +77,45 @@ class LinkedList {
       current = current.next;
     }
   }
+
+  kthFromEnd(k){
+    let offset = this.head;
+    let nBehind = this.head;
+
+    for(let i = 0; i < k; i++){
+      offset = offset.next;
+    }
+
+    while(offset.next){
+      offset = offset.next;
+      nBehind = nBehind.next;
+    }
+
+    return nBehind.value;
+  }
 }
 
+
+
+
 let list = new LinkedList();
-list.add('a');
-list.add('b');
-list.add('c');
-list.add('d');
-list.add('e');
+list.add(1);
+list.add(2);
+list.add(3);
+list.add(4);
+list.add(5);
 
 
-console.log(JSON.stringify(list));
+// console.log(JSON.stringify(list));
 list.traverse();
+
+// list.insertBefore(3, 'a');
+// list.insertAfter(5, 'a');
+
+
+console.log('kthFromEnd Works!!!!', list.kthFromEnd(2));
+console.log('include result', list.includes(3));
+console.log(list.toString());
+
 
 module.exports = LinkedList;
