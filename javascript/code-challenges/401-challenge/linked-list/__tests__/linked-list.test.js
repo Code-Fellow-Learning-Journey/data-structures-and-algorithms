@@ -28,7 +28,7 @@ describe('Link List inser Before', () => {
   });
 });
 
-describe('Link List inser After', () => {
+describe('Link List insert After', () => {
   let list = new LinkedList();
   it('accepts new node as expectd', () => {
     list.addAfter(3, 'a');
@@ -38,6 +38,15 @@ describe('Link List inser After', () => {
     expect(list.head.next.value).toEqual('a');
     expect(list.head.next.next.value).toEqual('b');
     expect(list.head.next.next.next.value).toEqual('c');
+  });
+});
+
+describe('Link List kth', () => {
+  let list = new LinkedList();
+  it('shows kth node', () => {
+    list.addAfter(2, '2');
+
+    expect(list.value).toEqual(3);
   });
 });
 
