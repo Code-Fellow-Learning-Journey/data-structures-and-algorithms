@@ -95,6 +95,20 @@ class LinkedList {
   }
 }
 
+  zipList(list1, list2){
+    let current1 = list1.head;
+    let current2 = list2.head;
+    while(current1 && current2 !== null){
+      let next1 = current1.next.node;
+      let next2 = current2.next.node;
+    }if(next1 !== null){
+      current2.next.node = next1;
+      current1 = next1;
+      current2 = next2;
+    }
+    return list1;
+  }
+
 
 
 
